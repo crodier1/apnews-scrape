@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scraping With Mongoose</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+
+
+
+  <style>
+    body { 
+      background-color: #F2F6D0;
+      background-image: url("./images/background.jpg"); 
+      background-size: cover; 
+      
+      }
+      #wrapper {
+        width: 860px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1%;
+      }      
+
+      .jumbotron{
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      }
+
+      .scrape{
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+      }
+
+      #articles {
+        display: inline-block;
+        overflow: auto;
+        width: 60%;
+        height: 400px;
+        background-color: white;
+        border-radius: 5px;  
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);      
+      }
+
+      .article{
+        border-bottom: black dotted 1px;
+        padding: 5px; 
+      }
+      #notes{
+        float: right;
+        width: 30%;        
+      }
+      textarea, input {
+        display: block;
+        width: 100%;
+        background-color: white;
+        margin: 3px;
+        border-radius: 5px;
+      }
+      input {
+        height: 36px;
+        font-size: 24px;        
+      }
+
+      .notes-title{
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;  
+      }
+      textarea {
+        height: 200px;
+        font-size: 18px;
+      }
+
+      .saved{
+        margin-top: 2.5%; 
+        color: white;
+        text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;  
+            
+      }
+
+      .saved-articles{
+        background-color: white;
+        padding: 5px; 
+        border-radius: 5px;  
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+      }
+    </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">All The News Fit to Scrape</h1>
+        <p class="lead">Get the latest news from Politico</p>
+      </div>
+    </div>
+
+    <div id="wrapper">
+
+      <p>
+        <a href="/scrape">
+          <button type="button" class="btn btn-success scrape">Update Now</button>
+        </a>
+      </p>
+
+      <hr />
+
+      <div id="articles"></div>
+      <div id="notes"></div>
+
+      <h1 class="saved">Saved</h1>
+      <hr />
+      <div id="saved"></div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
