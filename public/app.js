@@ -3,7 +3,7 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").prepend("<div class='article'><p data-id='" + data[i]._id + "'>" + data[i].title + "<br /> <a href='" + data[i].link + "' target='_blank'>View Source</a> <br /> <button data-id='" + data[i]._id + "' id='save-article' class='btn btn-primary'> <i class='far fa-save'></i> Save</button> <button class='btn btn-secondary'><i class='fas fa-pencil-alt'></i> Notate</button>");
+    $("#articles").prepend("<div class='article'><p data-id='" + data[i]._id + "'> <br /> <a href=' https://www.apnews.com" + data[i].link + "' target='_blank'> <span class='title'>" + data[i].title  + " </span></a> <br /> " + data[i].summary +  "<br/><button data-id='" + data[i]._id + "' id='save-article' class='btn btn-primary'> <i class='far fa-save'></i> Save</button> <button class='btn btn-secondary'><i class='fas fa-pencil-alt'></i> Notate</button>");
   }
 });
 
@@ -15,12 +15,13 @@ $.getJSON("/articles", function(data) {
    if(data[i].saved === true){
     //console.log(data[i]);
     $("#saved").append(
-      "<p data-id='" + data[i]._id + "' class='saved-articles'>" + data[i].title + "<br /> <a href='" + data[i].link + "' target='_blank'> View Source</a><br /> <button data-id='" + data[i]._id + "' id='delete-article' class='btn btn-danger'>Delete</button> <button class='btn btn-secondary'><i class='fas fa-pencil-alt'></i> Notate</button>"
+      "<div class='saved-articles'> <p data-id='" + data[i]._id + "'><br /> <a href='" + data[i].link + "' target='_blank'> <span class='title'>" + data[i].title  + "</span></a><br /> " + data[i].summary + " <br/> <button data-id='" + data[i]._id + "' id='delete-article' class='btn btn-danger'>Delete</button> <button class='btn btn-secondary'><i class='fas fa-pencil-alt'></i> Notate</button>"
 
     )
    } 
   }
 });
+
 
 
 // Whenever someone clicks a p tag
