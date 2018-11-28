@@ -15,7 +15,7 @@ $.getJSON("/articles", function(data) {
    if(data[i].saved === true){
     //console.log(data[i]);
     $("#saved").append(
-      "<div class='saved-articles'> <p data-id='" + data[i]._id + "'><br /> <a href='" + data[i].link + "' target='_blank'> <span class='title'>" + data[i].title  + "</span></a><br /> " + data[i].summary + " <br/> <button data-id='" + data[i]._id + "' id='delete-article' class='btn btn-danger'>Delete</button> <button class='btn btn-secondary'><i class='fas fa-pencil-alt'></i> Notate</button>"
+      "<div class='saved-articles'> <p data-id='" + data[i]._id + "'><br /> <a href=' https://www.apnews.com" + data[i].link + "' target='_blank'> <span class='title'>" + data[i].title  + "</span></a><br /> " + data[i].summary + " <br/> <button data-id='" + data[i]._id + "' id='delete-article' class='btn btn-danger'>Delete</button> <button class='btn btn-secondary'><i class='fas fa-pencil-alt'></i> Notate</button>"
 
     )
    } 
